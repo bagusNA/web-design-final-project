@@ -1,6 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
-  <RouterView>
-  </RouterView>
+  <component :is="$route.meta.layoutComponent">
+    <RouterView/>
+  </component>
 </template>
