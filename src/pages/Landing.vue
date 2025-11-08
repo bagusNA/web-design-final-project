@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <p>landing</p>
+  <p class="font-bold">landing</p>
   <div>
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/app">App</RouterLink>
