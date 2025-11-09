@@ -1,3 +1,7 @@
 @import "tailwindcss";
 
+@plugin "@iconify/tailwind4" {
+  prefixes: lucide;
+}
+
 @custom-variant dark (&:where(.dark, .dark *));

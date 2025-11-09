@@ -25,6 +25,8 @@
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.72",
+    "@iconify/tailwind4": "^1.1.0",
     "@prettier/plugin-oxc": "^0.0.4",
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "^22.18.11",
