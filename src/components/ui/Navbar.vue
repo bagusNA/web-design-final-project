@@ -27,15 +27,20 @@ const expandMobileMenu = ref<boolean>(false)
     class="sticky top-4 inset-x-0 before:absolute before:inset-0 before:max-w-5xl before:mx-2 lg:before:mx-auto before:rounded-xl before:border before:border-gray-200 before:shadow-xl dark:border-neutral-700 after:absolute after:inset-0 after:-z-1 after:max-w-5xl after:mx-2 lg:after:mx-auto after:rounded-xl after:bg-white dark:bg-neutral-900 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full"
   >
     <nav
-      class="relative max-w-5xl w-full md:flex md:items-center md:justify-between md:gap-3 ps-5 pe-2 mx-2 lg:mx-auto py-2 dark:bg-neutral-900"
+      class="relative max-w-5xl w-full md:flex md:items-center md:justify-between md:gap-3 ps-5 pe-2 mx-2 lg:mx-auto dark:bg-neutral-900"
     >
       <div class="flex items-center justify-between">
-        <a
+        <RouterLink
           class="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80 dark:text-white"
-          href="#"
+          to="/"
           aria-label="OpenAtelio Logo"
-          >Logo</a
         >
+          <img
+            src="@/assets/images/logo-dark.svg"
+            alt="OpenAtelio Logo"
+            class="size-12"
+          >
+        </RouterLink>
 
         <div class="md:hidden">
           <Button @click="expandMobileMenu = !expandMobileMenu" severity="light" outlined>
