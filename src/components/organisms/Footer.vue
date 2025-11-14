@@ -32,6 +32,7 @@ const props = defineProps<FooterProps>()
           <component
             :is="item.externalUrl ? 'a' : RouterLink"
             :href="item.url"
+            :to="item.url"
             :target="item.externalUrl ? '_blank' : ''"
             class="inline-flex gap-x-2 text-sm text-gray-500 hover:text-gray-800 focus:outline-hidden focus:text-gray-800 dark:text-neutral-500 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
           >

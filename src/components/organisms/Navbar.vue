@@ -48,8 +48,8 @@ const expandMobileMenu = ref<boolean>(false)
           <div class="py-2 md:py-0 flex flex-col md:flex-row md:items-center md:justify-end gap-0.5 md:gap-1">
             <component v-for="item in items"
                :is="item.externalUrl ? 'a' : RouterLink"
-               :href="item.externalUrl ? item.url : undefined"
-                       :to="!item.externalUrl ? item.url : undefined"
+               :href="item.url"
+                       :to="item.url"
               :target="item.externalUrl ? '_blank' : ''"
               class="p-2 flex items-center gap-x-2 text-sm font-medium text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500">
               <Icon v-if="item.icon" :name="item.icon"></Icon>
