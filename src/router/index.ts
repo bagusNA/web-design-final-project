@@ -10,6 +10,11 @@ const router = createRouter({
       component: () => import('@/pages/Landing.vue')
     },
     {
+      path: '/contact-us',
+      name: 'contact-us',
+      component: () => import('@/pages/Contact.vue')
+    },
+    {
       path: '/app',
       name: 'app',
       component: () => import('@/pages/Landing.vue'),

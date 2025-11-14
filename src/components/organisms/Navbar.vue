@@ -46,7 +46,10 @@ const expandMobileMenu = ref<boolean>(false)
         <div
           class="overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
           <div class="py-2 md:py-0 flex flex-col md:flex-row md:items-center md:justify-end gap-0.5 md:gap-1">
-            <component v-for="item in items" :is="item.externalUrl ? 'a' : RouterLink" :href="item.url"
+            <component v-for="item in items"
+               :is="item.externalUrl ? 'a' : RouterLink"
+               :href="item.externalUrl ? item.url : undefined"
+                       :to="!item.externalUrl ? item.url : undefined"
               :target="item.externalUrl ? '_blank' : ''"
               class="p-2 flex items-center gap-x-2 text-sm font-medium text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500">
               <Icon v-if="item.icon" :name="item.icon"></Icon>

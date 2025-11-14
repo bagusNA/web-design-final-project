@@ -5,6 +5,7 @@ import Footer from '@/components/organisms/Footer.vue'
 
 const navbarItems: MenuItem[] = [
   { label: 'Templates', url: '/' },
+  { label: 'Contact', url: '/contact-us' },
   { label: 'GitHub', url: 'https://github.com/bagusNA', externalUrl: true, icon: 'lucide--github' },
 ]
 </script>
