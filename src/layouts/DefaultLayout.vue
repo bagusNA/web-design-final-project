@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Navbar, { type MenuItem } from '@/components/ui/Navbar.vue'
-import Button from '@/components/form/Button.vue'
+import Navbar, { type MenuItem } from '@/components/organisms/Navbar.vue'
+import Button from '@/components/atoms/Button.vue'
 
 const navbarItems: MenuItem[] = [
   { label: 'Templates', url: '/' },
