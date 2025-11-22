@@ -23,7 +23,7 @@ const expandMobileMenu = ref<boolean>(false)
 </script>
 
 <template>
-  <header class="sticky top-4 inset-4 max-w-7xl px-2 md:px-4 mx-auto w-full">
+  <header class="sticky top-0 inset-x-4 max-w-7xl p-2 md:px-4 mx-auto w-full">
     <nav class="relative max-w-7xl w-full md:flex md:items-center md:justify-between px-2 rounded-xl shadow-xl bg-white border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700">
       <div class="flex items-center justify-between">
         <RouterLink
@@ -50,6 +50,7 @@ const expandMobileMenu = ref<boolean>(false)
             <component
               v-for="item in items"
               :is="item.externalUrl ? 'a' : RouterLink"
+              :to="item.url"
               :href="item.url"
               :target="item.externalUrl ? '_blank' : ''"
               class="p-2 flex items-center gap-x-2 text-sm font-medium text-gray-800 hover:text-gray-500 focus:outline-hidden focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
