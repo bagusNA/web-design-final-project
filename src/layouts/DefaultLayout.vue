@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import Button from 'primevue/button'
 import Navbar, { type MenuItem } from '@/components/organisms/Navbar.vue'
-import Button from '@/components/atoms/Button.vue'
 
 const navbarItems: MenuItem[] = [
   { label: 'Templates', url: '/' },
@@ -11,7 +11,7 @@ const navbarItems: MenuItem[] = [
 <template>
   <Navbar :items="navbarItems">
     <template #actions>
-      <Button>Get Started</Button>
+      <Button size="small">Get Started</Button>
     </template>
   </Navbar>
 

@@ -2,7 +2,7 @@
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 
-import Button from '@/components/atoms/Button.vue'
+import Button from 'primevue/button'
 import Icon from '@/components/atoms/Icon.vue'
 
 export interface MenuItem {
@@ -24,7 +24,9 @@ const expandMobileMenu = ref<boolean>(false)
 
 <template>
   <header class="sticky top-0 inset-x-4 max-w-7xl p-2 md:px-4 mx-auto w-full">
-    <nav class="relative max-w-7xl w-full md:flex md:items-center md:justify-between px-2 rounded-xl shadow-xl bg-white border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700">
+    <nav
+      class="relative max-w-7xl w-full md:flex md:items-center md:justify-between px-2 rounded-xl shadow-xl bg-white border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700"
+    >
       <div class="flex items-center justify-between">
         <RouterLink
           class="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80 dark:text-white"
@@ -46,7 +48,9 @@ const expandMobileMenu = ref<boolean>(false)
         class="transition-all duration-300 basis-full grow md:block"
       >
         <div class="max-h-[75vh]">
-          <div class="py-2 md:py-0 flex flex-col md:flex-row md:items-center md:justify-end gap-0.5 md:gap-1">
+          <div
+            class="py-2 md:py-0 flex flex-col md:flex-row md:items-center md:justify-end gap-0.5 md:gap-1"
+          >
             <component
               v-for="item in items"
               :is="item.externalUrl ? 'a' : RouterLink"

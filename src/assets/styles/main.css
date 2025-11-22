@@ -1,20 +1,8 @@
 @import "tailwindcss";
+@import "tailwindcss-primeui";
 
 @plugin "@iconify/tailwind4" {
   prefixes: lucide;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
-
-@theme {
-  --color-primary-50:  #E3F9FF;
-  --color-primary-100: #C5F2FF;
-  --color-primary-200: #8EE9FF;
-  --color-primary-300: #55DEFF;
-  --color-primary-400: #1AD2FF;
-  --color-primary-500: #00CAFF; /* your base */
-  --color-primary-600: #00A1CC;
-  --color-primary-700: #007A99;
-  --color-primary-800: #00546B;
-  --color-primary-900: #002E3A;
-}
