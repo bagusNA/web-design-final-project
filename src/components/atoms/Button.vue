@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 })
 
 const normalSeverityClasses: Record<Severity, string> = {
-  primary: 'bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-700 focus:ring-1 focus:ring-offset-2 focus:ring-blue-700',
+  primary: 'bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800 focus:bg-primary-700 focus:ring-1 focus:ring-offset-2 focus:ring-primary-700',
   secondary: 'bg-gray-600 text-white hover:bg-gray-700 active:bg-gray-800 focus:bg-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-700',
   success: 'bg-teal-500 text-white hover:bg-teal-600 active:bg-teal-700 focus:bg-teal-600 focus:ring-1 focus:ring-offset-2 focus:ring-teal-700',
   warning: 'bg-yellow-500 text-white hover:bg-yellow-600 active:bg-yellow-700 focus:bg-yellow-600 focus:ring-1 focus:ring-offset-2 focus:ring-yellow-600',
@@ -29,7 +29,7 @@ const normalSeverityClasses: Record<Severity, string> = {
 }
 
 const outlinedSeverityClasses: Record<Severity, string> = {
-  primary: 'border border-blue-600 text-blue-600 hover:bg-blue-50 active:bg-blue-100 focus:ring-1 focus:ring-offset-2 focus:ring-blue-600',
+  primary: 'border border-primary-600 text-primary-600 hover:bg-primary-50 active:bg-primary-100 focus:ring-1 focus:ring-offset-2 focus:ring-primary-600',
   secondary: 'border border-gray-600 text-gray-600 hover:bg-gray-50 active:bg-gray-100 focus:ring-1 focus:ring-offset-2 focus:ring-gray-600',
   success: 'border border-teal-500 text-teal-500 hover:bg-teal-50 active:bg-teal-100 focus:ring-1 focus:ring-offset-2 focus:ring-teal-500',
   warning: 'border border-yellow-500 text-yellow-600 hover:bg-yellow-50 active:bg-yellow-100 focus:ring-1 focus:ring-offset-2 focus:ring-yellow-500',
