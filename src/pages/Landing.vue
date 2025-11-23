@@ -9,6 +9,8 @@ import Hero from '@/components/organisms/Hero.vue'
     subtitle="Quickly create your own resume and CV. Free, forever."
     class="mt-12 sm:mt-18 md:mt-24 mb-12 max-w-5xl px-4 mx-auto"
   >
-    <Button>Start building your resume</Button>
+    <RouterLink to="/app/editor">
+      <Button> Start building your resume </Button>
+    </RouterLink>
   </Hero>
 </template>

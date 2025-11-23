@@ -10,9 +10,9 @@ const router = createRouter({
       component: () => import('@/pages/Landing.vue')
     },
     {
-      path: '/app',
-      name: 'app',
-      component: () => import('@/pages/Landing.vue'),
+      path: '/app/editor',
+      name: 'app.editor',
+      component: () => import('@/pages/Editor.vue'),
       meta: {
         layout: 'AppLayout',
       }
