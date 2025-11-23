@@ -7,6 +7,7 @@ import Icon from '@/components/atoms/Icon.vue'
 import BiodataDataCard, {
   type BiodataData,
 } from '@/components/molecules/DataCard/BiodataDataCard.vue'
+import QuickSettingsDataCard from '@/components/molecules/DataCard/QuickSettingsDataCard.vue'
 
 export interface EditorData {
   biodata: BiodataData
@@ -47,6 +48,8 @@ const editorData = defineModel<EditorData>('editorData', { required: true })
             </Message>
 
             <BiodataDataCard v-model:biodata="editorData.biodata" />
+
+            <QuickSettingsDataCard />
           </div>
         </div>
       </div>
