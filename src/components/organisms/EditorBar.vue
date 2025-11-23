@@ -19,7 +19,7 @@ const editorData = defineModel<EditorData>('editorData', { required: true })
 
 <template>
   <div
-    class="h-[75vh] w-full fixed inset-x-0 bottom-0 z-60 bg-white border border-gray-200 transition-all duration-300 md:bottom-unset md:w-100 md:h-full md:inset-y-0 md:inset-x-none dark:bg-neutral-800 dark:border-neutral-700"
+    class="h-[75vh] w-full fixed inset-x-0 bottom-0 z-60 transition-all duration-300 md:bottom-unset md:w-100 md:h-full md:inset-y-0 md:inset-x-none"
     :class="{
       'translate-y-5/6': !open,
     }"
