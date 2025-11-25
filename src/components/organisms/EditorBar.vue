@@ -7,12 +7,18 @@ import Icon from '@/components/atoms/Icon.vue'
 import BiodataDataCard, {
   type BiodataData,
 } from '@/components/molecules/DataCard/BiodataDataCard.vue'
-import EducationDataCard, { type EducationData } from '@/components/molecules/DataCard/EducationDataCard.vue'
+import EducationDataCard, {
+  type EducationData,
+} from '@/components/molecules/DataCard/EducationDataCard.vue'
 import QuickSettingsDataCard from '@/components/molecules/DataCard/QuickSettingsDataCard.vue'
+import ExperienceDataCard, {
+  type ExperienceData,
+} from '@/components/molecules/DataCard/ExperienceDataCard.vue'
 
 export interface EditorData {
   biodata: BiodataData
   educationData: EducationData
+  experienceData: ExperienceData
 }
 
 const open = ref<boolean>(true)
@@ -52,6 +58,8 @@ const editorData = defineModel<EditorData>('editorData', { required: true })
             <BiodataDataCard v-model:biodata="editorData.biodata" />
 
             <EducationDataCard v-model="editorData.educationData" />
+
+            <ExperienceDataCard v-model="editorData.experienceData" />
 
             <QuickSettingsDataCard />
           </div>

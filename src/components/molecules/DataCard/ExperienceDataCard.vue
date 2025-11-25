@@ -2,6 +2,7 @@
 import { useTemplateRef } from 'vue'
 import { useSortable } from '@vueuse/integrations/useSortable'
 import { randomString } from '@/utils/string.ts'
+import { EmploymentType, EmploymentTypeOptions } from '@/types/employment.ts'
 
 import Accordion from 'primevue/accordion'
 import AccordionContent from 'primevue/accordioncontent'
@@ -9,48 +10,49 @@ import AccordionHeader from 'primevue/accordionheader'
 import AccordionPanel from 'primevue/accordionpanel'
 import Button from 'primevue/button'
 import DatePicker from 'primevue/datepicker'
+import InputText from 'primevue/inputtext'
 import Message from 'primevue/message'
 import Panel from 'primevue/panel'
-import InputText from 'primevue/inputtext'
-import Textarea from 'primevue/textarea'
+import Select from 'primevue/select'
 import FieldGroup from '@/components/molecules/FieldGroup.vue'
 import Icon from '@/components/atoms/Icon.vue'
+import Textarea from 'primevue/textarea'
 
-export interface EducationItem {
+export interface ExperienceItem {
   id: string
-  schoolName: string | null
-  degree: string | null
+  jobTitle: string | null
+  employer: string | null
+  employmentType: EmploymentType | null
   startDate: Date | null
   endDate: Date | null
-  location: string | null
   description: string | null
 }
 
-export interface EducationData {
-  educations: EducationItem[]
+export interface ExperienceData {
+  experiences: ExperienceItem[]
 }
 
-const educationData = defineModel<EducationData>({ required: true })
+const experienceData = defineModel<ExperienceData>({ required: true })
 
-function addEducation(): void {
-  educationData.value.educations.push({
+function addExperience(): void {
+  experienceData.value.experiences.push({
     id: randomString(),
-    schoolName: '',
-    degree: '',
+    jobTitle: '',
+    employer: '',
+    employmentType: EmploymentType.FullTime,
     startDate: null,
     endDate: null,
-    location: '',
     description: '',
   })
 }
 
-function removeEducation(index: number): void {
-  educationData.value.educations.splice(index, 1)
+function removeExperience(index: number): void {
+  experienceData.value.experiences.splice(index, 1)
 }
 
 // --- Sorting ---
 const listEl = useTemplateRef('listEl')
-useSortable(listEl, educationData.value.educations, {
+useSortable(listEl, experienceData.value.experiences, {
   handle: '.handle',
   animation: 200,
 })
@@ -61,7 +63,7 @@ useSortable(listEl, educationData.value.educations, {
     <template #header>
       <div class="flex items-center gap-x-2">
         <Icon name="lucide--user"></Icon>
-        <span class="font-semibold">Education</span>
+        <span class="font-semibold">Experiences</span>
       </div>
     </template>
 
@@ -77,9 +79,9 @@ useSortable(listEl, educationData.value.educations, {
 
     <Accordion ref="listEl" multiple>
       <AccordionPanel
-        v-for="(education, i) in educationData.educations"
-        :key="education.id"
-        :value="education.id"
+        v-for="(experience, i) in experienceData.experiences"
+        :key="experience.id"
+        :value="experience.id"
         class="border-l border-r first-of-type:border-t last-of-type:border-b first-of-type:rounded-t last-of-type:rounded-b"
       >
         <AccordionHeader class="py-2">
@@ -88,7 +90,7 @@ useSortable(listEl, educationData.value.educations, {
               <Icon name="lucide--grip-vertical"></Icon>
             </span>
 
-            {{ education.schoolName || `Education ${i + 1}` }}
+            {{ experience.jobTitle || `Experience ${i + 1}` }}
           </div>
 
           <template #toggleicon="{ active }">
@@ -104,27 +106,36 @@ useSortable(listEl, educationData.value.educations, {
 
         <AccordionContent>
           <div class="space-y-2">
-            <FieldGroup label="School / University" icon="lucide--school" inputId="school-name">
+            <FieldGroup label="Job Title" icon="lucide--briefcase-business" inputId="job-title">
               <InputText
-                v-model="education.schoolName"
-                id="school-name"
-                placeholder="University"
+                v-model="experience.jobTitle"
+                id="job-title"
+                placeholder="Web Developer"
                 size="small"
               />
             </FieldGroup>
 
-            <FieldGroup label="Degree" icon="lucide--graduation-cap" inputId="degree">
+            <FieldGroup label="Employer / Company" icon="lucide--building-2" inputId="employer">
               <InputText
-                v-model="education.degree"
-                id="degree"
-                placeholder="Master of Bachelors"
+                v-model="experience.educationemployer"
+                id="employer"
+                placeholder="Company"
+                size="small"
+              />
+            </FieldGroup>
+
+            <FieldGroup label="Employment Type" icon="lucide--signature" inputId="employer">
+              <Select
+                :options="EmploymentTypeOptions"
+                optionLabel="label"
+                optionValue="value"
                 size="small"
               />
             </FieldGroup>
 
             <FieldGroup label="Start Date" icon="lucide--calendar" inputId="start-date">
               <DatePicker
-                v-model="education.startDate"
+                v-model="experience.startDate"
                 id="start-date"
                 placeholder="Start Date"
                 size="small"
@@ -134,7 +145,7 @@ useSortable(listEl, educationData.value.educations, {
 
             <FieldGroup label="End Date" icon="lucide--calendar" inputId="end-date">
               <DatePicker
-                v-model="education.endDate"
+                v-model="experience.endDate"
                 id="end-date"
                 placeholder="End Date"
                 size="small"
@@ -142,18 +153,9 @@ useSortable(listEl, educationData.value.educations, {
               />
             </FieldGroup>
 
-            <FieldGroup label="Location" icon="lucide--map-pin" inputId="location">
-              <InputText
-                v-model="education.location"
-                id="location"
-                placeholder="Indonesia"
-                size="small"
-              />
-            </FieldGroup>
-
             <FieldGroup label="Description" inputId="description">
               <Textarea
-                v-model="education.description"
+                v-model="experience.description"
                 id="description"
                 placeholder="Describe it here"
                 class="w-full text-sm"
@@ -167,7 +169,7 @@ useSortable(listEl, educationData.value.educations, {
                 size="small"
                 severity="danger"
                 outlined
-                @click="removeEducation(i)"
+                @click="removeExperience(i)"
               />
             </div>
           </div>
@@ -175,12 +177,12 @@ useSortable(listEl, educationData.value.educations, {
       </AccordionPanel>
     </Accordion>
 
-    <Message v-if="!educationData.educations.length" severity="secondary" size="small">
+    <Message v-if="!experienceData.experiences.length" severity="secondary" size="small">
       Empty
     </Message>
 
     <div class="mt-2">
-      <Button @click="addEducation" size="small"> Add </Button>
+      <Button @click="addExperience" size="small"> Add </Button>
     </div>
   </Panel>
 </template>
