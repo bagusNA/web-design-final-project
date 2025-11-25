@@ -14,11 +14,13 @@ import QuickSettingsDataCard from '@/components/molecules/DataCard/QuickSettings
 import ExperienceDataCard, {
   type ExperienceData,
 } from '@/components/molecules/DataCard/ExperienceDataCard.vue'
+import AwardDataCard, { type AwardData } from '@/components/molecules/DataCard/AwardsDataCard.vue'
 
 export interface EditorData {
   biodata: BiodataData
   educationData: EducationData
   experienceData: ExperienceData
+  awardData: AwardData
 }
 
 const open = ref<boolean>(true)
@@ -60,6 +62,8 @@ const editorData = defineModel<EditorData>('editorData', { required: true })
             <EducationDataCard v-model="editorData.educationData" />
 
             <ExperienceDataCard v-model="editorData.experienceData" />
+
+            <AwardDataCard v-model="editorData.awardData" />
 
             <QuickSettingsDataCard />
           </div>

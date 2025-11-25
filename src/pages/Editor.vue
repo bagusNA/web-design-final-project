@@ -36,6 +36,17 @@ const editorData = ref<EditorData>({
         description: '',
       }
     ],
+  },
+  awardData: {
+    awards: [
+      {
+        id: randomString(),
+        award: '',
+        issuer: '',
+        date: null,
+        description: '',
+      }
+    ]
   }
 })
 </script>
