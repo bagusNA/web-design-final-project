@@ -2,12 +2,26 @@
 import { ref } from 'vue'
 
 import EditorBar, { type EditorData } from '@/components/organisms/EditorBar.vue'
+import { randomString } from '@/utils/string.ts'
 
 const editorData = ref<EditorData>({
   biodata: {
     name: '',
     email: '',
     phoneNumber: '',
+  },
+  educationData: {
+    educations: [
+      {
+        id: randomString(),
+        schoolName: '',
+        degree: '',
+        startDate: null,
+        endDate: null,
+        location: '',
+        description: '',
+      }
+    ],
   }
 })
 </script>
