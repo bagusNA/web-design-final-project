@@ -1,9 +1,13 @@
 <script setup lang="ts">
-//
+import Navbar, { type MenuItem } from '@/components/organisms/Navbar.vue'
+
+const navbarItems: MenuItem[] = [
+  { label: 'My Resumes', url: '/' },
+]
 </script>
 
 <template>
-  <div class="bg-slate-100 dark:bg-neutral-900">
-    <slot></slot>
-  </div>
+  <Navbar :items="navbarItems"/>
+
+  <slot></slot>
 </template>

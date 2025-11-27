@@ -12,7 +12,7 @@ import Strongpoints from '@/components/organisms/Strongpoints.vue'
     subtitle="Quickly create your own resume and CV. Free, forever."
     class="mt-12 sm:mt-18 md:mt-24 mb-12 max-w-7xl px-4 mx-auto"
   >
-    <RouterLink to="/app/editor">
+    <RouterLink :to="{ name: 'app.home' }">
       <Button> Start building your resume </Button>
     </RouterLink>
   </Hero>
