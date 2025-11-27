@@ -48,7 +48,7 @@ const cards = ref<SavedResume[]>([
           v-if="card.thumbnail"
           :src="card.thumbnail"
           alt="Thumbnail"
-          class="w-full h-80 object-cover rounded-lg border border-neutral-300 shadow-2xl mb-4"
+          class="w-full h-80 object-cover rounded-lg border border-neutral-300 dark:border-neutral-800 shadow-2xl mb-4"
         />
         <p class="text-sm text-gray-600 dark:text-gray-300 font-medium">
           {{ formatDate(card.date) }}
