@@ -5,7 +5,9 @@ useDark({ disableTransition: false })
 </script>
 
 <template>
-  <component :is="$route.meta.layoutComponent">
-    <RouterView/>
-  </component>
+  <div class="min-h-screen">
+    <component :is="$route.meta.layoutComponent">
+      <RouterView/>
+    </component>
+  </div>
 </template>

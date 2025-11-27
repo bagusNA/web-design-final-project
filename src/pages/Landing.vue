@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Button from 'primevue/button'
 import Hero from '@/components/organisms/Hero.vue'
+import Footer from '@/components/organisms/Footer.vue'
 </script>
 
 <template>
@@ -13,4 +14,6 @@ import Hero from '@/components/organisms/Hero.vue'
       <Button> Start building your resume </Button>
     </RouterLink>
   </Hero>
+
+  <Footer/>
 </template>
