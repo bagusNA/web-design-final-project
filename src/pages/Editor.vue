@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import { randomString } from '@/utils/string.ts'
 import { EmploymentType } from '@/types/employment.ts'
 
+import Button from 'primevue/button'
 import EditorBar, { type EditorData } from '@/components/organisms/EditorBar.vue'
 import Preview from '@/components/organisms/Preview.vue'
 
@@ -70,7 +72,13 @@ const editorData = ref<EditorData>({
 </script>
 
 <template>
-  <EditorBar v-model:editorData="editorData" />
+  <EditorBar v-model:editorData="editorData">
+    <div class="flex flex-wrap gap-2">
+      <RouterLink to="/app">
+        <Button label="Home" icon="iconify lucide--home" />
+      </RouterLink>
+    </div>
+  </EditorBar>
 
   <Preview :editorData="editorData" />
 </template>

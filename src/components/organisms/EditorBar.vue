@@ -50,6 +50,8 @@ const editorData = defineModel<EditorData>('editorData', { required: true })
       <div class="h-full overflow-y-auto flex flex-col">
         <div class="p-3 w-full flex flex-col flex-wrap grow">
           <div class="space-y-2">
+            <slot />
+
             <Message icon="iconify lucide--info" closable>
               <div>Welcome to OpenAtelio!</div>
               <div class="font-normal text-sm">
