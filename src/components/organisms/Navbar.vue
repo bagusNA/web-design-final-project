@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+import { useDark } from '@vueuse/core'
 
 import Button from 'primevue/button'
 import Icon from '@/components/atoms/Icon.vue'
@@ -20,6 +21,8 @@ export interface NavbarProps {
 const props = defineProps<NavbarProps>()
 
 const expandMobileMenu = ref<boolean>(false)
+
+const isDark = useDark()
 </script>
 
 <template>
@@ -33,7 +36,8 @@ const expandMobileMenu = ref<boolean>(false)
           to="/"
           aria-label="OpenAtelio Logo"
         >
-          <img src="@/assets/images/logo-dark.svg" alt="OpenAtelio Logo" class="size-12 mx-2" />
+          <img v-if="!isDark" src="@/assets/images/logo-dark.svg" alt="OpenAtelio Logo" class="size-12 mx-2" />
+          <img v-else src="@/assets/images/logo-light.svg" alt="OpenAtelio Logo" class="size-12 mx-2" />
         </RouterLink>
 
         <div class="md:hidden">
