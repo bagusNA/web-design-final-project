@@ -26,7 +26,7 @@ const isDark = useDark()
 </script>
 
 <template>
-  <header class="sticky top-0 inset-x-4 max-w-7xl p-2 md:px-4 mx-auto w-full">
+  <header class="sticky top-0 inset-x-4 max-w-7xl p-2 md:px-4 mx-auto w-full z-10">
     <nav
       class="relative max-w-7xl w-full md:flex md:items-center md:justify-between px-2 rounded-xl shadow-xl bg-white border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700"
     >
