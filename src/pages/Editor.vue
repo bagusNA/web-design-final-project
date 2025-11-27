@@ -24,11 +24,11 @@ const editorData = ref<EditorData>({
     educations: [
       {
         id: randomString(),
-        schoolName: '',
-        degree: '',
-        startDate: null,
+        schoolName: 'Kalimantan Institute of Technology',
+        degree: 'Undergraduate in Computer Science',
+        startDate: new Date('2023-07'),
         endDate: null,
-        location: '',
+        location: 'Balikpapan, Indonesia',
         description: '',
       }
     ],
@@ -37,23 +37,32 @@ const editorData = ref<EditorData>({
     experiences: [
       {
         id: randomString(),
-        jobTitle: '',
-        employer: '',
+        jobTitle: 'Your Job Title',
+        employer: 'Super Company',
         employmentType: EmploymentType.FullTime,
-        startDate: null,
+        startDate: new Date('2025-02'),
         endDate: null,
-        description: '',
-      }
+        description: ['Describe your responsibilities briefly.'],
+      },
+      {
+        id: randomString(),
+        jobTitle: 'Your Job Title',
+        employer: 'Super Company',
+        employmentType: EmploymentType.FullTime,
+        startDate: new Date('2024-04'),
+        endDate: new Date('2025-02'),
+        description: ['Describe your responsibilities briefly.'],
+      },
     ],
   },
   awardData: {
     awards: [
       {
         id: randomString(),
-        award: '',
-        issuer: '',
-        date: null,
-        description: '',
+        award: 'Best Striker of All Time',
+        issuer: 'NATO',
+        date: new Date('2025-03'),
+        description: 'Describe what the award was for.',
       }
     ]
   }

@@ -16,16 +16,16 @@ import Panel from 'primevue/panel'
 import Select from 'primevue/select'
 import FieldGroup from '@/components/molecules/FieldGroup.vue'
 import Icon from '@/components/atoms/Icon.vue'
-import Textarea from 'primevue/textarea'
+import MultipleInputText from '@/components/molecules/MultipleInputText.vue'
 
 export interface ExperienceItem {
   id: string
   jobTitle: string | null
   employer: string | null
-  employmentType: EmploymentType | null
+  employmentType: EmploymentType
   startDate: Date | null
   endDate: Date | null
-  description: string | null
+  description: string[]
 }
 
 export interface ExperienceData {
@@ -117,7 +117,7 @@ useSortable(listEl, experienceData.value.experiences, {
 
             <FieldGroup label="Employer / Company" icon="lucide--building-2" inputId="employer">
               <InputText
-                v-model="experience.educationemployer"
+                v-model="experience.employer"
                 id="employer"
                 placeholder="Company"
                 size="small"
@@ -126,6 +126,7 @@ useSortable(listEl, experienceData.value.experiences, {
 
             <FieldGroup label="Employment Type" icon="lucide--signature" inputId="employer">
               <Select
+                v-model="experience.employmentType"
                 :options="EmploymentTypeOptions"
                 optionLabel="label"
                 optionValue="value"
@@ -153,14 +154,7 @@ useSortable(listEl, experienceData.value.experiences, {
               />
             </FieldGroup>
 
-            <FieldGroup label="Description" inputId="description">
-              <Textarea
-                v-model="experience.description"
-                id="description"
-                placeholder="Describe it here"
-                class="w-full text-sm"
-              />
-            </FieldGroup>
+            <MultipleInputText v-model="experience.description" label="Description" inputId="description"/>
 
             <div class="flex justify-end">
               <Button
