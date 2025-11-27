@@ -1,13 +1,23 @@
 <script setup lang="ts">
-import FieldGroup from '@/components/molecules/FieldGroup.vue'
-import Icon from '@/components/atoms/Icon.vue'
 import Panel from 'primevue/panel'
 import InputText from 'primevue/inputtext'
+import Textarea from 'primevue/textarea'
+import FieldGroup from '@/components/molecules/FieldGroup.vue'
+import Icon from '@/components/atoms/Icon.vue'
+import MultipleInputText from '@/components/molecules/MultipleInputText.vue'
 
 export interface BiodataData {
   name: string | null
   email: string | null
   phoneNumber: string | null
+  jobTitle: string | null
+  location: string | null
+  website: string | null
+  linkedinUsername: string | null
+  githubUsername: string | null
+  description: string | null
+  keySkills: string[]
+  languages: string[]
 }
 
 const biodata = defineModel<BiodataData>('biodata', { required: true })
@@ -55,6 +65,65 @@ const biodata = defineModel<BiodataData>('biodata', { required: true })
           size="small"
         />
       </FieldGroup>
+
+      <FieldGroup label="Job Title" icon="lucide--briefcase-business" inputId="job-title">
+        <InputText
+          v-model="biodata.jobTitle"
+          id="job-title"
+          placeholder="Web Developer"
+          size="small"
+        />
+      </FieldGroup>
+
+      <FieldGroup label="Location" icon="lucide--map-pin" inputId="location">
+        <InputText
+          v-model="biodata.location"
+          id="location"
+          placeholder="Web Developer"
+          size="small"
+        />
+      </FieldGroup>
+
+      <FieldGroup label="Website" icon="lucide--globe" inputId="website">
+        <InputText
+          v-model="biodata.website"
+          id="website"
+          placeholder="personalwebsite.com"
+          size="small"
+        />
+      </FieldGroup>
+
+      <FieldGroup label="LinkedIn" icon="lucide--linkedin" inputId="linkedin-username">
+        <InputText
+          v-model="biodata.linkedinUsername"
+          id="linkedin-username"
+          placeholder="/in/yourusername"
+          size="small"
+        />
+      </FieldGroup>
+
+      <FieldGroup label="Github" icon="lucide--github" inputId="github-username">
+        <InputText
+          v-model="biodata.githubUsername"
+          id="github-username"
+          placeholder="/yourusername"
+          size="small"
+        />
+      </FieldGroup>
+
+      <FieldGroup label="Description" icon="lucide--text-initial" inputId="description">
+        <Textarea
+          v-model="biodata.description"
+          id="description"
+          placeholder="Describe yourself here"
+          size="small"
+          class="w-full"
+        />
+      </FieldGroup>
+
+      <MultipleInputText v-model="biodata.keySkills" label="Key Skills" inputId="key-skills" />
+
+      <MultipleInputText v-model="biodata.languages" label="Languages" inputId="languages" />
     </div>
   </Panel>
 </template>

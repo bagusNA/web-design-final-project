@@ -8,9 +8,17 @@ import Preview from '@/components/organisms/Preview.vue'
 
 const editorData = ref<EditorData>({
   biodata: {
-    name: '',
-    email: '',
-    phoneNumber: '',
+    name: 'Your Name',
+    email: 'youremail@example.com',
+    phoneNumber: '+62 812-3456-7890',
+    jobTitle: 'Web Developer',
+    location: 'City, Country',
+    description: 'Describe yourself briefly',
+    website: 'yourwebsite.com',
+    githubUsername: '/username',
+    linkedinUsername: '/in/username',
+    keySkills: [],
+    languages: [],
   },
   educationData: {
     educations: [
