@@ -3,6 +3,7 @@ import Button from 'primevue/button'
 import FAQ from '@/components/organisms/FAQ.vue'
 import Footer from '@/components/organisms/Footer.vue'
 import Hero from '@/components/organisms/Hero.vue'
+import Strongpoints from '@/components/organisms/Strongpoints.vue'
 </script>
 
 <template>
@@ -15,6 +16,8 @@ import Hero from '@/components/organisms/Hero.vue'
       <Button> Start building your resume </Button>
     </RouterLink>
   </Hero>
+
+  <Strongpoints />
 
   <FAQ class="mx-auto max-w-7xl px-4" />
 

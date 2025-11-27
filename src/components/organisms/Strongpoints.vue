@@ -1,0 +1,39 @@
+<script setup lang="ts">
+export interface StrongpointItem {
+  title: string
+  text: string
+  icon: string
+}
+
+const items: StrongpointItem[] = [
+  {
+    title: 'Hassle-free',
+    text: 'No logins, no hoops. Just open the app and start building your CV right away.',
+    icon: 'iconify lucide--sparkles text-yellow-400',
+  },
+  {
+    title: 'Yours, your way',
+    text: 'Customize every detail to fit your style, no prior design experience required.',
+    icon: 'iconify lucide--palette text-pink-400',
+  },
+  {
+    title: 'Resume done, easy',
+    text: 'Get your finished resume instantly. No paywall, one-click download.',
+    icon: 'iconify lucide--rocket text-blue-500',
+  },
+]
+</script>
+
+<template>
+  <section class="w-full py-16 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[8px_8px]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        <div v-for="item in items" :key="item.title" class="flex flex-col items-center space-y-4">
+          <span class="text-5xl" :class="item.icon"></span>
+          <h3 class="text-xl font-semibold">{{ item.title }}</h3>
+          <p class="text-gray-600 text-sm max-w-xs">{{ item.text }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
