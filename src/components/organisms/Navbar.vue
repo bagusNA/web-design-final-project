@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
+import {
+  type RouteLocationAsPathGeneric,
+  type RouteLocationAsRelativeGeneric,
+  RouterLink,
+} from 'vue-router'
 import { useDark } from '@vueuse/core'
 
 import Button from 'primevue/button'
@@ -8,7 +12,7 @@ import Icon from '@/components/atoms/Icon.vue'
 
 export interface MenuItem {
   label: string
-  url?: string | null
+  url?: string | RouteLocationAsRelativeGeneric | RouteLocationAsPathGeneric | null
   externalUrl?: boolean
   icon?: string | null
   items?: MenuItem[]
@@ -36,8 +40,18 @@ const isDark = useDark()
           to="/"
           aria-label="OpenAtelio Logo"
         >
-          <img v-if="!isDark" src="@/assets/images/logo-dark.svg" alt="OpenAtelio Logo" class="size-12 mx-2" />
-          <img v-else src="@/assets/images/logo-light.svg" alt="OpenAtelio Logo" class="size-12 mx-2" />
+          <img
+            v-if="!isDark"
+            src="@/assets/images/logo-dark.svg"
+            alt="OpenAtelio Logo"
+            class="size-12 mx-2"
+          />
+          <img
+            v-else
+            src="@/assets/images/logo-light.svg"
+            alt="OpenAtelio Logo"
+            class="size-12 mx-2"
+          />
         </RouterLink>
 
         <div class="md:hidden">

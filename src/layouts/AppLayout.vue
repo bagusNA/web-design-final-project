@@ -2,7 +2,8 @@
 import Navbar, { type MenuItem } from '@/components/organisms/Navbar.vue'
 
 const navbarItems: MenuItem[] = [
-  { label: 'My Resumes', url: '/' },
+  { label: 'My Resumes', url: '/app' },
+  { label: 'Templates', url: '/templates' },
 ]
 </script>
 

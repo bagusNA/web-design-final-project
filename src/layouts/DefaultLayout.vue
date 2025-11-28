@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router'
 import Button from 'primevue/button'
 import Navbar, { type MenuItem } from '@/components/organisms/Navbar.vue'
 
@@ -11,7 +12,9 @@ const navbarItems: MenuItem[] = [
 <template>
   <Navbar :items="navbarItems">
     <template #actions>
-      <Button size="small">Get Started</Button>
+      <RouterLink :to="{ name: 'app.home' }">
+        <Button size="small">Get Started</Button>
+      </RouterLink>
     </template>
   </Navbar>
 
