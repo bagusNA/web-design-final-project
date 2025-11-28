@@ -3,7 +3,7 @@ import Button from 'primevue/button'
 import Navbar, { type MenuItem } from '@/components/organisms/Navbar.vue'
 
 const navbarItems: MenuItem[] = [
-  { label: 'Templates', url: '/' },
+  { label: 'Templates', url: '/templates' },
   { label: 'GitHub', url: 'https://github.com/bagusNA', externalUrl: true, icon: 'lucide--github' },
 ]
 </script>

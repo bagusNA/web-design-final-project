@@ -10,6 +10,11 @@ const router = createRouter({
       component: () => import('@/pages/Landing.vue')
     },
     {
+      path: '/templates',
+      name: 'templates',
+      component: () => import('@/pages/Templates.vue')
+    },
+    {
       path: '/app',
       name: 'app.home',
       component: () => import('@/pages/MyResume.vue'),
