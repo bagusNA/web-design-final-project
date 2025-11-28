@@ -20,6 +20,4 @@ import Strongpoints from '@/components/organisms/Strongpoints.vue'
   <Strongpoints />
 
   <FAQ class="mx-auto max-w-7xl px-4" />
-
-  <Footer/>
 </template>

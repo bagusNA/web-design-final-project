@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router'
 import Button from 'primevue/button'
 import Navbar, { type MenuItem } from '@/components/organisms/Navbar.vue'
+import Footer from '@/components/organisms/Footer.vue'
 
 const navbarItems: MenuItem[] = [
   { label: 'Templates', url: '/templates' },
@@ -21,4 +22,6 @@ const navbarItems: MenuItem[] = [
   <transition name="fade">
     <slot></slot>
   </transition>
+
+  <Footer/>
 </template>
