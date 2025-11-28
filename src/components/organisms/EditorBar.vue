@@ -46,7 +46,6 @@ const editorData = defineModel<EditorData>('editorData', { required: true })
     </Button>
 
     <div class="relative flex flex-col h-full max-h-full">
-      <!-- Content -->
       <div class="h-full overflow-y-auto flex flex-col">
         <div class="p-3 w-full flex flex-col flex-wrap grow">
           <div class="space-y-2">
@@ -71,7 +70,6 @@ const editorData = defineModel<EditorData>('editorData', { required: true })
           </div>
         </div>
       </div>
-      <!-- End Content -->
     </div>
   </div>
 </template>

@@ -81,7 +81,6 @@ const isDark = useDark()
               {{ item.label }}
             </component>
 
-            <!-- Button Group -->
             <div
               v-if="$slots.actions"
               class="relative flex flex-wrap items-center gap-x-1.5 md:ps-2.5 md:ms-1.5 before:block before:absolute before:top-1/2 before:-start-px before:w-px before:h-4 before:bg-gray-300 before:-translate-y-1/2 dark:before:bg-neutral-700"

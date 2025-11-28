@@ -9,11 +9,8 @@ defineProps<TemplateProps>()
 <template>
   <div class="p-2">
     <div class="grid grid-cols-12 gap-6 p-8">
-      <!-- LEFT SIDEBAR -->
       <aside class="col-span-4 border-r pr-3">
-        <!-- Profile block -->
         <div class="flex flex-col items-start gap-4">
-          <!-- Photo placeholder -->
           <div
             class="w-28 h-28 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center"
           >
@@ -28,7 +25,6 @@ defineProps<TemplateProps>()
           <p class="text-sm muted">{{ data.biodata.description }}</p>
         </div>
 
-        <!-- Contact -->
         <section class="mt-6">
           <h3 class="text-sm font-semibold section-title">Contact</h3>
           <ul class="mt-2 text-sm muted space-y-1">
@@ -58,7 +54,6 @@ defineProps<TemplateProps>()
           </ul>
         </section>
 
-        <!-- Skills -->
         <section class="mt-6">
           <h3 class="text-sm font-semibold section-title">Key Skills</h3>
           <div class="mt-2 grid grid-cols-1 gap-2 text-sm">
@@ -73,7 +68,6 @@ defineProps<TemplateProps>()
           </div>
         </section>
 
-        <!-- Languages -->
         <section class="mt-6">
           <h3 class="text-sm font-semibold section-title">Languages</h3>
           <ul class="mt-2 text-sm muted space-y-1">
@@ -83,7 +77,6 @@ defineProps<TemplateProps>()
           </ul>
         </section>
 
-        <!-- Misc: certificates / awards small list -->
         <section class="mt-6">
           <h3 class="text-sm font-semibold section-title">Awards & Certificates</h3>
           <ul class="mt-2 text-sm muted space-y-1">
@@ -91,14 +84,11 @@ defineProps<TemplateProps>()
             <li><span class="font-medium text-gray-700">Cert: ABC</span> — 2023</li>
           </ul>
         </section>
-
-        <!-- Footer small note -->
-        <div class="mt-8 text-xs muted">Available for: Full-time • Part-time • Freelance</div>
       </aside>
 
-      <!-- MAIN CONTENT -->
       <main class="col-span-8 pl-3">
-        <!-- Experience -->
+
+        <!-- Experiences -->
         <section>
           <div class="flex items-center justify-between">
             <h2 class="text-lg font-semibold">Experience</h2>
@@ -106,7 +96,7 @@ defineProps<TemplateProps>()
           </div>
 
           <div class="mt-4 space-y-4">
-            <!-- Experience item -->
+
             <article v-for="experience in data.experienceData.experiences" :key="experience.id">
               <div class="flex justify-between">
                 <div>

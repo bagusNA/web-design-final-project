@@ -7,7 +7,6 @@ import ThemeToggleSimple from '@/components/atoms/ThemeToggleSimple.vue'
     <div
       class="mx-auto w-full max-w-7xl px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
     >
-      <!-- Left Section -->
       <div class="space-y-4">
         <img
           src="@/assets/images/logo-light.svg"
@@ -29,7 +28,6 @@ import ThemeToggleSimple from '@/components/atoms/ThemeToggleSimple.vue'
         </a>
       </div>
 
-      <!-- Right Section -->
       <div class="flex flex-col md:items-end gap-6">
         <div class="flex items-center gap-4 text-xl">
           <i class="iconify lucide--languages"></i>
