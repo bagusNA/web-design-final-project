@@ -25,13 +25,13 @@ const items: StrongpointItem[] = [
 </script>
 
 <template>
-  <section class="w-full py-16 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[8px_8px]">
+  <section class="w-full py-16 bg-size-[8px_8px] bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#343232_1px,transparent_1px)]">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
         <div v-for="item in items" :key="item.title" class="flex flex-col items-center space-y-4">
           <span class="text-5xl" :class="item.icon"></span>
-          <h3 class="text-xl font-semibold">{{ item.title }}</h3>
-          <p class="text-gray-600 text-sm max-w-xs">{{ item.text }}</p>
+          <h3 class="text-xl font-semibold dark:text-neutral-50">{{ item.title }}</h3>
+          <p class="text-sm max-w-xs text-gray-600 dark:text-neutral-300">{{ item.text }}</p>
         </div>
       </div>
     </div>
