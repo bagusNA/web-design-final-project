@@ -6,8 +6,22 @@ useDark({ disableTransition: false })
 
 <template>
   <div class="min-h-screen">
-    <component :is="$route.meta.layoutComponent">
-      <RouterView/>
-    </component>
+    <transition name="fade">
+      <component :is="$route.meta.layoutComponent">
+        <RouterView/>
+      </component>
+    </transition>
   </div>
 </template>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

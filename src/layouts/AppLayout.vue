@@ -10,5 +10,7 @@ const navbarItems: MenuItem[] = [
 <template>
   <Navbar :items="navbarItems"/>
 
-  <slot></slot>
+  <transition name="fade">
+    <slot></slot>
+  </transition>
 </template>

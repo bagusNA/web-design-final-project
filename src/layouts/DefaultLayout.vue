@@ -18,5 +18,7 @@ const navbarItems: MenuItem[] = [
     </template>
   </Navbar>
 
-  <slot></slot>
+  <transition name="fade">
+    <slot></slot>
+  </transition>
 </template>
