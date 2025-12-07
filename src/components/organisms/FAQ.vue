@@ -72,7 +72,7 @@ const faqs = ref<FAQItem[]>([
           </AccordionHeader>
 
           <AccordionContent class="rounded-xl">
-            <div class="pt-2 text-sm text-neutral-600">
+            <div class="pt-2 text-sm text-neutral-600 dark:text-neutral-200">
               {{ faq.content }}
             </div>
           </AccordionContent>
