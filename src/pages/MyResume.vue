@@ -48,7 +48,7 @@ const cards = ref<SavedResume[]>([
           v-if="card.thumbnail"
           :src="card.thumbnail"
           alt="Thumbnail"
-          class="w-full h-80 object-cover rounded-lg border border-neutral-300 dark:border-neutral-800 shadow-2xl mb-4"
+          class="w-full h-100 object-cover rounded-lg border border-neutral-300 dark:border-neutral-800 shadow-2xl mb-4"
         />
         <p class="text-sm text-gray-600 dark:text-gray-300 font-medium">
           {{ formatDate(card.date) }}
@@ -60,7 +60,7 @@ const cards = ref<SavedResume[]>([
       <div class="transition hover:brightness-80 active:brightness-70">
         <div class="space-y-4">
           <div
-            class="w-full h-80 flex flex-col justify-center items-center border-2 border-dashed border-primary-300 dark:border-primary-600 rounded-2xl p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            class="w-full h-100 flex flex-col justify-center items-center border-2 border-dashed border-primary-300 dark:border-primary-600 rounded-2xl p-6 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition"
           >
             <span class="text-4xl text-primary-500 dark:text-primary-400">+</span>
           </div>
