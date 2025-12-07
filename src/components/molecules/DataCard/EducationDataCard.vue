@@ -60,7 +60,7 @@ useSortable(listEl, educationData.value.educations, {
   <Panel toggleable>
     <template #header>
       <div class="flex items-center gap-x-2">
-        <Icon name="lucide--user"></Icon>
+        <Icon name="lucide--graduation-cap"></Icon>
         <span class="font-semibold">Education</span>
       </div>
     </template>

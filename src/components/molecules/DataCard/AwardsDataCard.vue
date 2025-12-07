@@ -56,7 +56,7 @@ useSortable(listEl, awardData.value.awards, {
   <Panel toggleable>
     <template #header>
       <div class="flex items-center gap-x-2">
-        <Icon name="lucide--user"></Icon>
+        <Icon name="lucide--trophy"></Icon>
         <span class="font-semibold">Award</span>
       </div>
     </template>
