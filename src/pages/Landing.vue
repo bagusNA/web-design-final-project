@@ -1,9 +1,17 @@
 <script setup lang="ts">
 import Button from 'primevue/button'
 import FAQ from '@/components/organisms/FAQ.vue'
-import Footer from '@/components/organisms/Footer.vue'
 import Hero from '@/components/organisms/Hero.vue'
 import Strongpoints from '@/components/organisms/Strongpoints.vue'
+import placeholder from '@/assets/images/placeholder.png'
+import FeaturedTemplates from '@/components/organisms/FeaturedTemplates.vue'
+
+const images = [
+  placeholder,
+  placeholder,
+  placeholder,
+  placeholder,
+]
 </script>
 
 <template>
@@ -18,6 +26,8 @@ import Strongpoints from '@/components/organisms/Strongpoints.vue'
   </Hero>
 
   <Strongpoints />
+
+  <FeaturedTemplates :images="images" />
 
   <FAQ class="mx-auto max-w-7xl px-4" />
 </template>
