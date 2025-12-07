@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
+import { useLocalStorage } from '@vueuse/core'
 import { randomString } from '@/utils/string.ts'
 import { EmploymentType } from '@/types/employment.ts'
+import { parseWithDates } from '@/utils/parser.ts'
 
 import Button from 'primevue/button'
 import EditorBar, { type EditorData } from '@/components/organisms/EditorBar.vue'
 import Preview from '@/components/organisms/Preview.vue'
 import EditorTopRightOverlay from '@/components/organisms/EditorTopRightOverlay.vue'
 
-const editorData = ref<EditorData>({
+const defaultData = ref<EditorData>({
   biodata: {
+    profileImage: null,
     name: 'Your Name',
     email: 'youremail@example.com',
     phoneNumber: '+62 812-3456-7890',
@@ -69,6 +72,14 @@ const editorData = ref<EditorData>({
       }
     ]
   }
+})
+
+const editorData = useLocalStorage<EditorData>('editor-data', defaultData.value, {
+  serializer: {
+    // JSON.parse() does not handle date value so we use this instead
+    read: (v) => v ? parseWithDates(v) : null,
+    write: (v) => JSON.stringify(v),
+  },
 })
 </script>
 
