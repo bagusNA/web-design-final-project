@@ -7,6 +7,7 @@ import { EmploymentType } from '@/types/employment.ts'
 import Button from 'primevue/button'
 import EditorBar, { type EditorData } from '@/components/organisms/EditorBar.vue'
 import Preview from '@/components/organisms/Preview.vue'
+import EditorTopRightOverlay from '@/components/organisms/EditorTopRightOverlay.vue'
 
 const editorData = ref<EditorData>({
   biodata: {
@@ -81,4 +82,6 @@ const editorData = ref<EditorData>({
   </EditorBar>
 
   <Preview :editorData="editorData" />
+
+  <EditorTopRightOverlay/>
 </template>

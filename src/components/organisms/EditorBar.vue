@@ -10,7 +10,6 @@ import BiodataDataCard, {
 import EducationDataCard, {
   type EducationData,
 } from '@/components/molecules/DataCard/EducationDataCard.vue'
-import QuickSettingsDataCard from '@/components/molecules/DataCard/QuickSettingsDataCard.vue'
 import ExperienceDataCard, {
   type ExperienceData,
 } from '@/components/molecules/DataCard/ExperienceDataCard.vue'
@@ -65,8 +64,6 @@ const editorData = defineModel<EditorData>('editorData', { required: true })
             <ExperienceDataCard v-model="editorData.experienceData" />
 
             <AwardDataCard v-model="editorData.awardData" />
-
-            <QuickSettingsDataCard />
           </div>
         </div>
       </div>
