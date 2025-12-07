@@ -33,7 +33,7 @@ const editorData = ref<EditorData>({
         endDate: null,
         location: 'Balikpapan, Indonesia',
         description: '',
-      }
+      },
     ],
   },
   experienceData: {

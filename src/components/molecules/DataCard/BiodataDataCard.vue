@@ -5,8 +5,10 @@ import Textarea from 'primevue/textarea'
 import FieldGroup from '@/components/molecules/FieldGroup.vue'
 import Icon from '@/components/atoms/Icon.vue'
 import MultipleInputText from '@/components/molecules/MultipleInputText.vue'
+import ProfileImagePicker from '@/components/molecules/ProfileImagePicker.vue'
 
 export interface BiodataData {
+  profileImage: string | null
   name: string | null
   email: string | null
   phoneNumber: string | null
@@ -43,6 +45,8 @@ const biodata = defineModel<BiodataData>('biodata', { required: true })
     </template>
 
     <div class="space-y-2">
+      <ProfileImagePicker v-model="biodata.profileImage"/>
+
       <FieldGroup label="Name" icon="lucide--user" inputId="name">
         <InputText v-model="biodata.name" id="name" placeholder="John Doe" size="small" />
       </FieldGroup>

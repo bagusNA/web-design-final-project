@@ -11,7 +11,14 @@ defineProps<TemplateProps>()
     <div class="grid grid-cols-12 gap-6 p-8">
       <aside class="col-span-4 border-r pr-3">
         <div class="flex flex-col items-start gap-4">
+          <img
+            v-if="data.biodata.profileImage"
+            :src="data.biodata.profileImage"
+            :alt="data.biodata.name"
+            class="w-28 h-28 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center"
+          >
           <div
+            v-else
             class="w-28 h-28 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center"
           >
             <span class="text-gray-500">Photo</span>
