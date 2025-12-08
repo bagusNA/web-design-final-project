@@ -20,6 +20,12 @@ export const resumeTemplates: ResumeTemplate[] = [
     component: defineAsyncComponent(() => import('@/components/organisms/templates/SimpleTemplate.vue')),
   },
   {
+    id: 'grass-green',
+    name: 'Grass Green',
+    description: "Touch some grass bro.",
+    component: defineAsyncComponent(() => import('@/components/organisms/templates/GrassGreenTemplate.vue')),
+  },
+  {
     id: 'purple-delight',
     name: 'Purple Delight',
     description: "Purple all the way.",
