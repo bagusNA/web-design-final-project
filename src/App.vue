@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { useDark } from '@vueuse/core'
 
+import { useAccentColor } from '@/composables/UseAccentColor.ts'
+
 import ConfirmDialog from 'primevue/confirmdialog'
 
 useDark({ disableTransition: false })
+useAccentColor()
 </script>
 
 <template>

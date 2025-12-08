@@ -6,6 +6,7 @@ import { useConfirm } from 'primevue'
 import Button from 'primevue/button'
 import FieldGroup from '@/components/molecules/FieldGroup.vue'
 import DarkModeSwitch from '@/components/atoms/DarkModeSwitch.vue'
+import ThemeSwitcher from '@/components/atoms/ThemeSwitcher.vue'
 
 const { clearResumes } = useResume()
 const confirm = useConfirm()
@@ -41,7 +42,7 @@ function clearData(): void {
   </section>
 
   <section class="max-w-7xl mx-auto px-4 pt-4 pb-20 space-y-12">
-    <div class="space-y-2">
+    <div class="space-y-4">
       <div class="flex gap-4 items-center">
         <h6 class="text-lg">Appearance</h6>
         <hr class="text-primary-100 dark:text-neutral-400 grow" />
@@ -50,9 +51,13 @@ function clearData(): void {
       <FieldGroup label="Dark Mode" inputId="dark-mode">
         <DarkModeSwitch />
       </FieldGroup>
+
+      <FieldGroup label="Theme" inputId="dark-mode">
+        <ThemeSwitcher/>
+      </FieldGroup>
     </div>
 
-    <div class="space-y-2">
+    <div class="space-y-4">
       <div class="flex gap-4 items-center">
         <h6 class="text-lg">Others</h6>
         <hr class="text-primary-100 dark:text-neutral-400 grow" />
