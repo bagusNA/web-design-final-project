@@ -25,6 +25,12 @@ export const resumeTemplates: ResumeTemplate[] = [
     description: "Purple all the way.",
     component: defineAsyncComponent(() => import('@/components/organisms/templates/PurpleDelightTemplate.vue')),
   },
+  {
+    id: 'professional',
+    name: 'Professional',
+    description: "We all need a job. :(",
+    component: defineAsyncComponent(() => import('@/components/organisms/templates/ProfessionalTemplate.vue')),
+  },
 ]
 
 
