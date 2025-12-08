@@ -16,6 +16,12 @@ import ExperienceDataCard, {
 import AwardDataCard, { type AwardData } from '@/components/molecules/DataCard/AwardsDataCard.vue'
 
 export interface EditorData {
+  id: string
+  title: string
+  thumbnailImage: string | null
+  createdAt: Date | null
+  updatedAt: Date | null
+
   biodata: BiodataData
   educationData: EducationData
   experienceData: ExperienceData

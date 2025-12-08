@@ -23,7 +23,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/app/editor',
+      path: '/app/editor/:id',
       name: 'app.editor',
       component: () => import('@/pages/Editor.vue'),
       meta: {
