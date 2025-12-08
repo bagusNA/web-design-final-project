@@ -1,5 +1,5 @@
-import { computed, type MaybeRefOrGetter } from 'vue'
-import { useLocalStorage } from '@vueuse/core'
+import { computed, type MaybeRefOrGetter, watchEffect } from 'vue'
+import { useIDBKeyval } from '@vueuse/integrations/useIDBKeyval'
 
 import { parseWithDates } from '@/utils/parser.ts'
 import { createResume as serviceCreateResume } from '@/services/resumeService.ts'
@@ -7,7 +7,7 @@ import type { EditorData } from '@/components/organisms/EditorBar.vue'
 import { randomString } from '@/utils/string.ts'
 
 export function useResume(id: MaybeRefOrGetter<string | null> = null) {
-  const resumes = useLocalStorage<EditorData[]>('editor-data', [], {
+  const { data: resumes } = useIDBKeyval<EditorData[]>('editor-data', [], {
     serializer: {
       // JSON.parse() does not handle date value so we use this instead
       read: (v) => (v ? parseWithDates(v) : null),
@@ -16,11 +16,11 @@ export function useResume(id: MaybeRefOrGetter<string | null> = null) {
   })
 
   const resume = computed<EditorData | null>(() =>
-    id ? (resumes.value.find((r) => r.id === id) ?? null) : null,
+    id ? getResumeById(id) : null,
   )
 
-  function getResumeById(id: string) {
-    return resumes.value.find(r => r.id === id)
+  function getResumeById(id: string): EditorData | null {
+    return resumes.value.find(r => r.id === id) ?? null
   }
 
   function createResume(): EditorData {

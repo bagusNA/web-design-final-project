@@ -13,7 +13,7 @@ const { resume } = useResume(route.params.id as string)
 </script>
 
 <template>
-  <EditorBar v-model:editorData="resume!">
+  <EditorBar v-if="resume" v-model:editorData="resume">
     <div class="flex flex-wrap gap-2">
       <RouterLink to="/app">
         <Button label="Home" icon="iconify lucide--home" />
@@ -21,7 +21,7 @@ const { resume } = useResume(route.params.id as string)
     </div>
   </EditorBar>
 
-  <Preview :editorData="resume!" />
+  <Preview v-if="resume" :editorData="resume!" />
 
   <EditorTopRightOverlay />
 </template>
