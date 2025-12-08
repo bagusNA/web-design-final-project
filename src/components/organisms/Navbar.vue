@@ -26,7 +26,7 @@ const props = defineProps<NavbarProps>()
 
 const expandMobileMenu = ref<boolean>(false)
 
-const isDark = useDark()
+const isDark = useDark({ disableTransition: false })
 </script>
 
 <template>

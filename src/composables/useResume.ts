@@ -42,11 +42,16 @@ export function useResume(id: MaybeRefOrGetter<string | null> = null) {
     resumes.value.splice(index, 1)
   }
 
+  function clearResumes(): void {
+    resumes.value = []
+  }
+
   return {
     resumes,
     resume,
 
     createResume,
     deleteResume,
+    clearResumes,
   }
 }

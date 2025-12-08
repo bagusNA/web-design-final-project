@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useDark } from '@vueuse/core'
 
+import ConfirmDialog from 'primevue/confirmdialog'
+
 useDark({ disableTransition: false })
 </script>
 
@@ -12,6 +14,8 @@ useDark({ disableTransition: false })
       </component>
     </transition>
   </div>
+
+  <ConfirmDialog/>
 </template>
 
 <style>

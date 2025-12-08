@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import layoutMiddleware from '@/router/middlewares/layout-middleware.ts'
 
 const router = createRouter({
@@ -28,6 +29,14 @@ const router = createRouter({
       component: () => import('@/pages/Editor.vue'),
       meta: {
         layout: 'EditorLayout',
+      }
+    },
+    {
+      path: '/app/settings',
+      name: 'app.settings',
+      component: () => import('@/pages/Settings.vue'),
+      meta: {
+        layout: 'AppLayout',
       }
     },
   ],
