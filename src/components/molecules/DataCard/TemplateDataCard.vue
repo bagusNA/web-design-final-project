@@ -37,7 +37,7 @@ const templateId = defineModel<string>({ required: true })
             @click="templateId = item.id"
           >
             <img
-              :src="placeholder"
+              :src="item.thumbnail"
               :alt="item.name"
               class="aspect-10/14 object-cover w-full rounded-lg shadow-2xl mb-4"
             />

@@ -18,7 +18,7 @@ import { resumeTemplates } from '@/composables/useResumeTemplate.ts'
         :class="{ 'md:mt-12': i % 3 === 1 && i !== 1 }"
       >
         <img
-          :src="placeholder"
+          :src="item.thumbnail"
           :alt="item.name"
           class="aspect-10/14 object-cover w-full rounded-lg shadow-2xl mb-4"
         >
