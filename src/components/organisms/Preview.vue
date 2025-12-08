@@ -3,15 +3,20 @@ import VueZoomable from 'vue-zoomable'
 import 'vue-zoomable/dist/style.css'
 
 import type { EditorData } from '@/components/organisms/EditorBar.vue'
-import SimpleTemplate from '@/components/organisms/templates/SimpleTemplate.vue'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import Button from 'primevue/button'
+import {
+  useResumeTemplate,
+} from '@/composables/useResumeTemplate.ts'
 
 export interface PreviewProps {
   editorData: EditorData
 }
 
 const props = defineProps<PreviewProps>()
+
+const templateId = computed<string>(() => props.editorData.templateId)
+const { template: resumeTemplate } = useResumeTemplate(templateId)
 
 const defaultZoom = 0.8
 const zoomStep = 0.1
@@ -40,8 +45,10 @@ const resetZoomPan = () => {
     :dblClickEnabled="false"
     class="h-screen w-screen"
   >
-    <div class="A4-preview text-black bg-white">
-      <SimpleTemplate :data="editorData" />
+    <div class="flex gap-4">
+      <div class="A4-preview text-black bg-white">
+        <component :is="resumeTemplate.component" :data="editorData" />
+      </div>
     </div>
 
     <template #buttons>

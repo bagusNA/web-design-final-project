@@ -14,9 +14,12 @@ import ExperienceDataCard, {
   type ExperienceData,
 } from '@/components/molecules/DataCard/ExperienceDataCard.vue'
 import AwardDataCard, { type AwardData } from '@/components/molecules/DataCard/AwardsDataCard.vue'
+import TemplateDataCard from '@/components/molecules/DataCard/TemplateDataCard.vue'
 
 export interface EditorData {
   id: string
+  templateId: string
+
   title: string
   thumbnailImage: string | null
   createdAt: Date | null
@@ -62,6 +65,8 @@ const editorData = defineModel<EditorData>('editorData', { required: true })
                 Start building your resume by entering your data below
               </div>
             </Message>
+
+            <TemplateDataCard v-model="editorData.templateId"/>
 
             <BiodataDataCard v-model:biodata="editorData.biodata" />
 

@@ -139,15 +139,20 @@ defineProps<TemplateProps>()
             <div
               v-for="education in data.educationData.educations"
               :key="education.id"
-              class="flex justify-between"
             >
-              <div>
-                <p class="font-medium">{{ education.schoolName }}</p>
-                <p class="muted">{{ education.degree }}</p>
+              <div class="flex justify-between">
+                <div>
+                  <p class="font-medium">{{ education.schoolName }}</p>
+                  <p class="muted">{{ education.degree }}</p>
+                </div>
+                <div v-if="education.startDate">
+                  {{ formatMonthYear(education.startDate)?.value ?? '' }} -
+                  {{ formatMonthYear(education.endDate)?.value ?? 'Present' }}
+                </div>
               </div>
-              <div v-if="education.startDate">
-                {{ formatMonthYear(education.startDate)?.value ?? '' }} -
-                {{ formatMonthYear(education.endDate)?.value ?? 'Present' }}
+
+              <div class="mt-1 text-xs">
+                {{ education.description }}
               </div>
             </div>
           </div>

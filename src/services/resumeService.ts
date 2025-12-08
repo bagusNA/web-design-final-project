@@ -4,6 +4,7 @@ import { EmploymentType } from '@/types/employment.ts'
 export function createResume(id: string = randomString()) {
   return {
     id,
+    templateId: 'simple',
     title: 'Untitled Resume',
     createdAt: new Date(),
     updatedAt: new Date(),
