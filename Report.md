@@ -6,3 +6,6 @@
 - [src/components/atoms/Badge.vue](src/components/atoms/Badge.vue)
 - [src/components/organisms/Strongpoints.vue](src/components/organisms/Strongpoints.vue)
 - [src/layouts/DefaultLayout.vue](src/layouts/DefaultLayout.vue)
+
+## Route
+    /about
